@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
+using UnityEngine;
 using agora_gaming_rtc;
 
 
@@ -20,7 +20,7 @@ public class AgoraVideoChat : Photon.MonoBehaviour
 {
     [Header("Agora Properties")]
     [SerializeField]
-    private string appID = "57481146914f4cddaa220d6f7a045063";
+    private string appID = "APP_ID";
     [SerializeField]
     private string channel = "unity3d";
     private string originalChannel;
@@ -48,12 +48,12 @@ public class AgoraVideoChat : Photon.MonoBehaviour
         {
             return;
         }
-            
+
 
         playerVideoList = new List<GameObject>();
 
         // Setup Agora Engine and Callbacks.
-        if(mRtcEngine != null)
+        if (mRtcEngine != null)
         {
             IRtcEngine.Destroy();
         }
@@ -85,7 +85,7 @@ public class AgoraVideoChat : Photon.MonoBehaviour
         if (!photonView.isMine)
         {
             return;
-        } 
+        }
 
         mRtcEngine.LeaveChannel();
 
@@ -112,11 +112,11 @@ public class AgoraVideoChat : Photon.MonoBehaviour
          * If I want to leave the party, and go back to my original channel, someone is already in it!
          * Therefore, if someone is inside "myChannel" and I want to be alone, I have to join a new channel that has the name of my unique Agora UID "304598093" (for example).
          */
-        if(channel != originalChannel || channel == myUID.ToString())
+        if (channel != originalChannel || channel == myUID.ToString())
         {
             channel = originalChannel;
         }
-        else if(channel == originalChannel)
+        else if (channel == originalChannel)
         {
             channel = myUID.ToString();
         }
@@ -204,7 +204,7 @@ public class AgoraVideoChat : Photon.MonoBehaviour
 
         // Update our VideoSurface to reflect new users
         VideoSurface newVideoSurface = newUserVideo.GetComponent<VideoSurface>();
-        if(newVideoSurface == null)
+        if (newVideoSurface == null)
         {
             Debug.LogError("CreateUserVideoSurface() - VideoSurface component is null on newly joined user");
             return;

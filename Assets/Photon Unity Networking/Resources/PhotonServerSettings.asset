@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b51608f6a3a4584d87dc9aecf104cfd, type: 3}
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
-  AppID: 
+  AppID: ceab1938-d573-4cac-b696-944d6d07fbc4
   VoiceAppID: 
   ChatAppID: 
   HostType: 1
@@ -25,7 +25,7 @@ MonoBehaviour:
   JoinLobby: 0
   EnableLobbyStatistics: 0
   PunLogging: 0
-  NetworkLogging: 1
+  NetworkLogging: 5
   RunInBackground: 1
   RpcList:
   - InvitePlayerToPartyChannel
